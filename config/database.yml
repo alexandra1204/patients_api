@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV['DATABASE_URL'] || "postgresql://#{ENV['POSTGRES_USER'] || 'postgres'}:#{ENV['POSTGRES_PASSWORD'] || 'password'}@#{ENV['POSTGRES_HOST'] || 'db'}:#{ENV['POSTGRES_PORT'] || 5432}/#{ENV['POSTGRES_DB'] || 'patients_development'}" %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  url: <%= ENV['DATABASE_URL_TEST'] || ENV['DATABASE_URL'] %>
+
+production:
+  <<: *default
