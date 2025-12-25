@@ -6,7 +6,7 @@ ruby '3.2.6'
 gem "rails", "~> 7.1.0"
 gem "pg", ">= 1.1"
 gem "puma"
-gem "bootsnap", "~> 1.18.6", require: false
+gem "bootsnap", "~> 1.20.1", require: false
 gem "dotenv-rails", groups: [:development, :test]
 gem "httparty"
 gem "rack-cors"
